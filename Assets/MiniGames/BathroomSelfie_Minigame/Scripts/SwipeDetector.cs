@@ -45,6 +45,8 @@ public class SwipeDetector : MonoBehaviour
             }
         }
     }
+
+    
     private void DetectSwipe()
     {
         if (SwipeDistanceCheckMet())
@@ -63,15 +65,18 @@ public class SwipeDetector : MonoBehaviour
         fingerUpPosition = fingerDownPosition;
     }
 
+    //Vertical ve horizontalýn kýyaslandýðý ve minDistanceForSwip'la kýyaslandýðý
     private bool SwipeDistanceCheckMet()
     {
         return VerticalMovementDistance() > minDistanceForSwipe || HorizontalMovementDistance() > minDistanceForSwipe;
     }
+
     private bool IsVerticalSwipe()
     {
         return VerticalMovementDistance() > HorizontalMovementDistance();
     }
 
+    //Parmaðý dokunduðum ile kaldýrdýðým yer arasýndaki uzaklýðýn hesaplandýðý yer
     private float VerticalMovementDistance()
     {
         return Mathf.Abs(fingerDownPosition.y - fingerUpPosition.y);
@@ -81,6 +86,8 @@ public class SwipeDetector : MonoBehaviour
     {
         return Mathf.Abs(fingerDownPosition.x - fingerUpPosition.x);
     }
+
+    
 
     private void SendSwipe(EnumSwipeDirection direction)
     {

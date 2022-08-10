@@ -5421,7 +5421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawBackgroundManager: {fileID: 1956464644}
-  arrowBoxController: {fileID: 1406846794}
+  arrowBoxController: {fileID: 0}
   poseController: {fileID: 424356976}
 --- !u!114 &1536153766
 MonoBehaviour:
@@ -6964,6 +6964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentEnumDirection: 4
   rawBackgroundAnimationController: {fileID: 816059958}
+  arrowBoxController: {fileID: 1406846794}
 --- !u!1 &1984031810
 GameObject:
   m_ObjectHideFlags: 0

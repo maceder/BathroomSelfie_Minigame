@@ -36,14 +36,12 @@ public class ArrowBoxController : MonoBehaviour
         if (collision.GetComponent<ArrowType>() != null)
         {
             inBoxArrow = EnumSwipeDirection.None;
-
-            Message.Send<EnumSwipeDirection>(EventName.RawBacgroundArrowTouch, inBoxArrow);
         }
     }
 
 
 
-    public void WrongArrow()
+    public void WrongArrowAnimation()
     {
         if(inBoxArrow != EnumSwipeDirection.Empty)
         {
@@ -57,7 +55,7 @@ public class ArrowBoxController : MonoBehaviour
         
     }
 
-    public void CorrectArrow()
+    public void CorrectArrowAnimation()
     {
         boxImage.color = Color.green;
         boxImage.DOColor(Color.white, 1f);

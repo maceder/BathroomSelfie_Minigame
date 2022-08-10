@@ -16,6 +16,7 @@ public class ArrowManager : MonoBehaviour
         Message.RemoveListener<GameObject>(EventName.CorrectArrow, SwipeArrow);
     }
 
+    //ArrowAnimation
     private void SwipeArrow(GameObject currentArrow)
     {
         Destroy(currentArrow.GetComponent<BoxCollider2D>());

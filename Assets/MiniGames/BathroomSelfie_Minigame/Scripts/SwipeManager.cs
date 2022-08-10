@@ -6,7 +6,6 @@ using UnityEngine;
 public class SwipeManager : MonoBehaviour
 {
     public RawBackgroundManager rawBackgroundManager;
-    public ArrowBoxController arrowBoxController;
     public PoseController poseController;
 
     private void Awake()
@@ -14,17 +13,19 @@ public class SwipeManager : MonoBehaviour
         SwipeDetector.OnSwipe += SwipeDetector_OnSwipe;
     }
 
+
+    //SwipeDetektör'den gelen datanýn kýyaslanmasý
     private void SwipeDetector_OnSwipe(SwipeData data)
     {
-        if (rawBackgroundManager.currentEnumDirection == data.Direction)
+        if (rawBackgroundManager.CompareSwipeDirection(data))
         {
-            arrowBoxController.CorrectArrow();
             rawBackgroundManager.RawBackgroundIsPlay(true);
+            rawBackgroundManager.CorrectSwipeAnimation();
             poseController.ChangePose(data.Direction);
         }
         else
         {
-            arrowBoxController.WrongArrow();
+            rawBackgroundManager.WrongSwipeAnimation();
         }
     }
 }
